@@ -10,7 +10,7 @@ dotenv.config();
 // Importing routes 
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users')
-
+const postRoute = require('./routes/posts')
 
 
 // TO send JSON objects inside the body 
@@ -26,7 +26,8 @@ mongoose.connect(process.env.MONGO,
 
 //importing route middlewares
 app.use('/api/auth', authRoute);
-app.use('/api/user', userRoute);
+app.use('/api/users', userRoute);
+app.use('/api/posts', postRoute);
 
 // Listening to the port
 
