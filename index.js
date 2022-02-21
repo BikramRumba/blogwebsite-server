@@ -13,10 +13,11 @@ const userRoute = require('./routes/users')
 const postRoute = require('./routes/posts')
 const categoriesRoute = require('./routes/categories')
 const multer = require('multer');
+const path = require('path');
 
 // TO send JSON objects inside the body 
 app.use(express.json());
-
+app.use("/images", express.static(path.join(__dirname, "/images")));
 
 
 // Connected to the database
@@ -45,4 +46,4 @@ app.use('/api/categories', categoriesRoute);
 
 // Listening to the port
 
-app.listen(3000, ()=>console.log("Backend is running"));
+app.listen(5000, ()=>console.log("Backend is running"));
